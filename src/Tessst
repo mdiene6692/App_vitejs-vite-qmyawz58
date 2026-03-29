@@ -1,0 +1,54 @@
+const app = document.getElementById("app");
+
+function home() {
+  app.innerHTML = `
+    <h2>Liggey</h2>
+    <button onclick="order()">Commander</button>
+    <button onclick="orders()">Mes commandes</button>
+    <button onclick="credit()">Mon crédit</button>
+  `;
+}
+
+function order() {
+  app.innerHTML = `
+    <h3>Produits</h3>
+    <button onclick="checkout(5000)">Commande 5000 FCFA</button>
+    <br><br>
+    <button onclick="home()">Retour</button>
+  `;
+}
+
+function checkout(amount) {
+  app.innerHTML = `
+    <h3>Paiement</h3>
+    <p>Montant: ${amount} FCFA</p>
+    <button onclick="confirm()">Payer maintenant</button>
+    <button onclick="confirm()">Payer avec crédit</button>
+  `;
+}
+
+function confirm() {
+  app.innerHTML = `
+    <h3>Commande validée</h3>
+    <p>Livraison en cours</p>
+    <button onclick="home()">Retour</button>
+  `;
+}
+
+function orders() {
+  app.innerHTML = `
+    <h3>Mes commandes</h3>
+    <p>Aucune pour le moment</p>
+    <button onclick="home()">Retour</button>
+  `;
+}
+
+function credit() {
+  app.innerHTML = `
+    <h3>Crédit disponible</h3>
+    <p>50 000 FCFA</p>
+    <button onclick="home()">Retour</button>
+  `;
+}
+
+home();
